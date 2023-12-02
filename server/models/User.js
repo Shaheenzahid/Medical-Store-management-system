@@ -38,11 +38,7 @@ const UserSchema = new Schema({
       type: Number,
       unique:true
     },
-    Image:{
-      type:String,
-      data: Buffer,
-    }
+    
   }, {timestamps : true });
 
-const UserModel = mongoose.model("user", UserSchemaSchema)
-module.exports=UserModel
+  module.exports = mongoose.model("user", UserSchema);

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI = "mongodb://localhost:27017/MedStoreManagementSystem"
+const mongoURI = "mongodb://127.0.0.1:27017/MedStoreManagementSystem"
 
 async function getconnection(){
     await mongoose.connect(mongoURI).then(
