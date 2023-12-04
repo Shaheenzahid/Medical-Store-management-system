@@ -1,20 +1,19 @@
-const mongoose=require("mongoose")
-const express = require("express");
-const connectToMongo = require("./utils/db");
-const cors = require("cors");
-
+const mongoose=require('mongoose');
+const port = 3005;
+const express = require('express');
+const connectToMongo = require('./utils/db');
+const bodyparser = require('body-parser'); 
+const cors = require('cors');
+const routes = require('./routers/userroute');
 const app = express();
-app.use(express.json());
 app.use(cors());
 
 
-
-
-
-app.use('/api/User' , require('./routers/User'));
+app.use(bodyparser.json());
+app.use('/api' , routes);
 
 connectToMongo();
 
-app.listen(3001, () =>{
+app.listen(port, () =>{
     console.log("server is running")
 })

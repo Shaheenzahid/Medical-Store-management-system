@@ -1,43 +1,40 @@
-const mongoose = require("mongoose")
-const express = require("express");
-const router = express.Router();
-const { Schema } = mongoose;
+const mongoose = require("mongoose");
 
 
-const UserSchema = new Schema({
-    Name: {
+
+const UserSchema = new mongoose.Schema({
+    name: {
       type: String,
       require: true,
     },
-    Email: {
-      type: String,
-      unique: true,
+    email: {
+     type: String,
+
       require: true,
     },
-    Password: {
+    password: {
       type: String,
       require: true,
     },
-    CreatedAt: {
+    createdAt: {
       type: Date,
       default: Date.now,
     },
-    isAdmin: {
-      type: Boolean,
-      default: false,
-    },
-    Active: {
-      type: Boolean,
-      default: true,
-    },
-    CNIC: {
+    // isAdmin: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // active: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    cnic: {
       type: String,
       require: true,
     },
-    PhoneNo:{
-      type: Number,
-      unique:true
-    },
+    phoneno:{
+      type: String,
+    }
     
   }, {timestamps : true });
 

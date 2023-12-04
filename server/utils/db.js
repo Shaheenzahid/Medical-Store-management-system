@@ -1,17 +1,14 @@
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', true); // or true 
 
-const mongoURI = "mongodb://127.0.0.1:27017/MedStoreManagementSystem"
-
-async function getconnection(){
-    await mongoose.connect(mongoURI).then(
-        ()=>{
-            console.log(`connected to DB `)
-        }
-    ).catch(
-        (err)=>{
-            console.log(err)
-
-        }
-    )
-}
-module.exports=getconnection;
+mongoose.connect('mongodb://127.0.0.1:27017/MedStoreManagementSystem', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+db.on('error', (err) => {
+  console.log('Failed to connect with db');
+});
+db.once('open', () => {
+  console.log('Connected with db');
+});
