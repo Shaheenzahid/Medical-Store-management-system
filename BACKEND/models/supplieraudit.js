@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const regSuppliersSchema = new Schema({
+const supplierauditSchema = new Schema({
     
     
 
@@ -11,7 +11,7 @@ const regSuppliersSchema = new Schema({
         required:true
 
     },
-    email : {
+    email:{
         type: String,
         required:true
     },
@@ -30,6 +30,11 @@ const regSuppliersSchema = new Schema({
         required:true
 
     },
+    gender : {
+        type : String,
+        required:true
+
+    },
     phone_number : {
         type : Number,
         required:true
@@ -40,7 +45,16 @@ const regSuppliersSchema = new Schema({
         required:true
 
     },
-    Active: {
+    re_type_pass : {
+        type : String,
+        required:true
+
+    },
+    accept_terms: {
+        type: Boolean,
+        required: true
+      },
+      Active: {
         type: Boolean,
         default: true,
       },
@@ -51,6 +65,6 @@ const regSuppliersSchema = new Schema({
     
 })
 
-const regSuppliers = mongoose.model("regSuppliers",regSuppliersSchema);
+const SupplierAudit = mongoose.model("SupplierAudit",supplierauditSchema);
 
-module.exports= regSuppliers;
+module.exports= SupplierAudit;

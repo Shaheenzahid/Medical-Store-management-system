@@ -18,13 +18,17 @@ const declineReasonSchema = new Schema({
         ref: 'Order',
         required: true
       },
-      declineDate: {
+      createdAt: {
         type: Date,
-        required: true
+        default: Date.now,
       },
       declineReason: {
         type: String,
         required: true
+      },
+      Active: {
+        type: Boolean,
+        default: true,
       }
 });
 

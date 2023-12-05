@@ -20,7 +20,15 @@ const orderSchema = new Schema({
         type : String,
         required:true
 
-    }
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
+    Active: {
+        type: Boolean,
+        default: true,
+      }
     
     
     

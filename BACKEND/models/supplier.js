@@ -53,6 +53,14 @@ const supplierSchema = new Schema({
     accept_terms: {
         type: Boolean,
         required: true
+      },
+      Active: {
+        type: Boolean,
+        default: true,
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now,
       }
     
 })

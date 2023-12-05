@@ -9,7 +9,7 @@ const AddOrder = () => {
   const [medicineTypes, setMedicineTypes] = useState([]);
 
   useEffect(() => {
-    const fetchMedicineTypes = async () => {
+    const fetchMedicineTypes = async () => {  // Fetch the  details from the server
       try {
         const res = await axios.get('http://localhost:8070/orders/medicine_types');
         console.log(res.data)
